@@ -1,0 +1,188 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[letterpaper,top=0.48in,bottom=0.42in,left=0.48in,right=0.48in]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{helvet}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{ragged2e}
+\usepackage{calc}
+
+\renewcommand{\familydefault}{\sfdefault}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\definecolor{lightgraybox}{RGB}{241,241,241}
+\definecolor{rulegray}{RGB}{155,155,155}
+\definecolor{textgray}{RGB}{95,95,95}
+\definecolor{placeholdergray}{RGB}{225,225,225}
+
+% -----------------------
+% Easy image replacement
+% -----------------------
+% Put your image files in an "images" folder next to this .tex file.
+% If a file is not present, a labeled placeholder is shown instead.
+\newcommand{\portfolioimage}[4]{%
+  % #1 = filename, #2 = caption, #3 = width, #4 = height
+  \begin{minipage}[t]{#3}
+    \centering
+    \IfFileExists{images/#1}{%
+      \includegraphics[width=\linewidth,height=#4,keepaspectratio]{images/#1}%
+    }{%
+      \fcolorbox{white}{placeholdergray}{%
+        \parbox[c][#4][c]{\dimexpr\linewidth-2\fboxsep\relax}{\centering\scriptsize\color{textgray}\texttt{\detokenize{#1}}}%
+      }%
+    }\\[-1pt]
+    \raggedright\fontsize{6.3}{7.0}\selectfont #2
+  \end{minipage}%
+}
+
+\newcommand{\projectheader}[2]{%
+  \noindent
+  \colorbox{lightgraybox}{%
+    \parbox[c][0.34in][c]{0.47\textwidth}{\centering\fontsize{11.8}{13}\selectfont\textls[150]{\textcolor{textgray}{#1}}}%
+  }%
+  \hspace{0.16in}%
+  {\fontsize{12.5}{14}\selectfont\bfseries #2}\par
+  \vspace{0.12in}
+}
+
+\newcommand{\projectrule}{%
+  \vspace{0.08in}\noindent\color{rulegray}\rule{\textwidth}{0.55pt}\color{black}\vspace{0.11in}
+}
+
+\newenvironment{projectbullets}{%
+  \begin{itemize}[leftmargin=0.23in,itemsep=1.4pt,topsep=3pt,parsep=0pt]
+  \fontsize{7.85}{9.35}\selectfont\color{textgray}
+}{\end{itemize}}
+
+\newcommand{\spacedtitle}[1]{%
+  {\fontsize{18}{20}\selectfont\textls[170]{#1}}%
+}
+
+\begin{document}
+\fontsize{8.2}{9.5}\selectfont
+
+% =======================
+% PAGE 1
+% =======================
+\noindent\spacedtitle{JONATHAN GILMER'S PORTFOLIO}\par
+\vspace{0.10in}
+{\fontsize{8.8}{10}\selectfont\bfseries GitHub:} {\fontsize{8.8}{10}\selectfont\color{textgray}\href{https://github.com/Jonnogilm}{https://github.com/Jonnogilm}}\par
+\vspace{0.11in}
+\color{rulegray}\rule{\textwidth}{0.55pt}\color{black}
+\vspace{0.13in}
+
+% --- Self-driving mini car ---
+\projectheader{SELF-DRIVING MINI CAR}{ROBOTICS}
+
+\noindent
+\portfolioimage{mini_pointcloud.jpg}{A point cloud I recorded}{0.34\textwidth}{1.05in}\hfill
+\portfolioimage{mini_code.jpg}{Snippet of the code}{0.18\textwidth}{1.05in}\hfill
+\portfolioimage{mini_side.jpg}{Final prototype pictures}{0.27\textwidth}{1.05in}\hfill
+\portfolioimage{mini_front.jpg}{}{0.14\textwidth}{1.05in}
+
+\begin{projectbullets}
+  \item Built a self-driving RC car that uses a \textbf{360$^\circ$ LiDAR sensor} and a Raspberry Pi 5 to detect obstacles and steer in real time
+  \item Implemented perception and navigation in ROS 2 (Jazzy Jalisco) using C++. Wrote my own ``follow the gap'' algorithm
+  \item Currently extending the system toward full SLAM capability
+\end{projectbullets}
+
+\projectrule
+
+% --- Battlebots ---
+\projectheader{BATTLEBOTS}{ROBOTICS}
+
+\noindent\hspace{0.06\textwidth}%
+\portfolioimage{battlebot_test.jpg}{First powered test}{0.23\textwidth}{1.00in}\hfill
+\portfolioimage{battlebot_official.jpg}{Our official tournament picture}{0.31\textwidth}{1.00in}\hfill
+\portfolioimage{battlebot_win.jpg}{Our first win}{0.25\textwidth}{1.00in}\hspace{0.02\textwidth}
+
+\begin{projectbullets}
+  \item Built a 12 lbs servo-powered flipper \textbf{combat robot} with a team of four high school students
+  \item As team lead, I was responsible for ensuring we maximized destructive power while minimizing weight
+  \item Competed in the National Havoc Robot League and placed 9th in our weight class out of 40 bots
+\end{projectbullets}
+
+\projectrule
+
+% --- Tractor go-kart ---
+\projectheader{TRACTOR GO-KART}{MECHANICAL}
+
+\noindent
+\portfolioimage{tractor_original.jpg}{Abandoned tractor I started with}{0.24\textwidth}{0.98in}\hfill
+\portfolioimage{tractor_pulley.jpg}{Smaller transaxle pulley}{0.16\textwidth}{0.98in}\hfill
+\portfolioimage{tractor_pedal.jpg}{Gas pedal I added}{0.27\textwidth}{0.98in}\hfill
+\portfolioimage{tractor_finished.jpg}{Finished look}{0.25\textwidth}{0.98in}
+
+\begin{projectbullets}
+  \item Converted an abandoned ride-on tractor into a \textbf{6-speed manual go-kart} with a \textbf{26 hp} motor connected by a belt drive
+  \item I fabricated a gas pedal, clutch, shifting linkage, mount for the new motor, and a smaller rear transaxle pulley to increase top speed
+  \item The completed build shifted cleanly through all the gears and increased top speed from 8 mph to 34 mph
+\end{projectbullets}
+
+\newpage
+
+% =======================
+% PAGE 2
+% =======================
+% --- Freestanding sauna ---
+\projectheader{FREESTANDING SAUNA}{CONSTRUCTION}
+
+\noindent
+\portfolioimage{sauna_sketch.jpg}{First structure sketch}{0.14\textwidth}{1.22in}\hfill
+\portfolioimage{sauna_floor.jpg}{Framing the floor}{0.16\textwidth}{1.22in}\hfill
+\portfolioimage{sauna_weatherproofing.jpg}{Weatherproofing}{0.16\textwidth}{1.22in}\hfill
+\portfolioimage{sauna_cedar.jpg}{Interior cedar trim}{0.16\textwidth}{1.22in}\hfill
+\portfolioimage{sauna_door.jpg}{}{0.18\textwidth}{1.52in}\hfill
+\portfolioimage{sauna_finished.jpg}{Finished sauna build}{0.16\textwidth}{1.36in}
+
+\begin{projectbullets}
+  \item Designed and constructed a free-standing 7' x 14' sauna.
+  \item Electrically heated with cedar interior, 4' x 3' window, and two-stage bench design
+  \item I completed the work, from design to finished build, over three years
+\end{projectbullets}
+
+\projectrule
+
+% --- Reaction wheeled robot ---
+\projectheader{REACTION WHEELED ROBOT}{ROBOTICS}
+
+\noindent\hspace{0.05\textwidth}%
+\portfolioimage{reaction_electronics.jpg}{Testing the electronics}{0.38\textwidth}{1.13in}\hfill
+\portfolioimage{reaction_spinning.jpg}{Final product spinning}{0.19\textwidth}{1.13in}\hfill
+\portfolioimage{reaction_stable.jpg}{Final product stable}{0.19\textwidth}{1.13in}\hspace{0.05\textwidth}
+
+\begin{projectbullets}
+  \item Used scrap electronics from previous projects
+  \item Coded PWM pulses for the motor in Arduino C++ with varying spinup and spindown times, which resulted in motion
+  \item Placed runner-up in an Instructables contest
+\end{projectbullets}
+
+\projectrule
+
+% --- Skov Design ---
+\projectheader{SKOV DESIGN}{BUSINESS/WOODWORKING}
+
+\noindent
+\portfolioimage{skov_prototyping.jpg}{Prototyping}{0.13\textwidth}{1.00in}\hfill
+\portfolioimage{skov_custom.jpg}{Custom work}{0.23\textwidth}{1.00in}\hfill
+\portfolioimage{skov_market_sales.jpg}{Farmers' market sales}{0.23\textwidth}{1.00in}\hfill
+\portfolioimage{skov_booth.jpg}{Farmers' market booth}{0.23\textwidth}{1.00in}\hfill
+\portfolioimage{skov_etsy.jpg}{Etsy listing photo}{0.16\textwidth}{1.00in}
+
+\begin{projectbullets}
+  \item Started a woodworking business, making a variety of products, all designed by me
+  \item Sold products on Etsy and hired friends to sell locally. Gross revenue over \textbf{\$10,000} over 2 years of operation
+  \item Donated all profits to the National Forest Foundation
+\end{projectbullets}
+
+\vspace{0.10in}
+\noindent\color{rulegray}\rule{\textwidth}{0.55pt}\color{black}
+
+\end{document}
