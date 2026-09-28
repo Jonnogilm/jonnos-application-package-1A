@@ -1,0 +1,291 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[normalem]{ulem}
+\setlength{\ULdepth}{2.8pt}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generated PDF is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+% #1 = Company/School
+% #2 = Location
+% #3 = Position/Degree
+% #4 = Dates
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} $|$ #2 $|$ \textit{#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small#1 & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%
+%-------------------------------------------
+
+\begin{document}
+
+%----------HEADING----------
+
+\begin{center}
+    \textbf{\Huge \scshape Jonathan Gilmer} \\ \vspace{1pt}
+    \small(781) 570-1877 $|$
+    \href{mailto:jgilmer@uwaterloo.ca}{\uline{jgilmer@uwaterloo.ca}} $|$
+    \href{https://github.com/Jonnogilm}{\uline{GitHub}} $|$
+    \href{https://drive.google.com/file/d/1rFq5eKug-X8dI4mRi-UmunpJV-XK28H5/view?usp=sharing}{\uline{Portfolio}} $|$
+    \small{U.S. \& Canadian Citizen}
+    
+\end{center}
+
+%-----------EDUCATION-----------
+
+\section{Education}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {University of Waterloo}
+      {Waterloo, ON}
+      {BASc, Mechanical Engineering}
+      {Sep 2026 -- Apr 2031}
+      \resumeItemListStart
+        \resumeItem{\textbf{Honors and Awards}: Presidential Scholarship of Distinction}
+        % \resumeItem{\textbf{Relevant Coursework}: Linear Algebra, Introduction to Mechanical Engineering, Calculus, Mechanics}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+%-----------SKILLS-----------
+
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{CAD/FEA}{: SolidWorks, Fusion 360, Onshape, AutoCAD, Ansys Mechanical} \\
+     \textbf{Programming}{: C++, C, Python, Java} \\
+     \textbf{Robotics/Embedded}{: ROS 2, Raspberry Pi, Arduino, STM32, sensor fusion \& filtering} \\
+     %\textbf{Communication}{: CAN, I2C, SPI, QSPI, UART, TCP, UDP}\\
+     \textbf{Tools/Platforms}{: Git, Linux, Redis, MongoDB, PostgreSQL} \\
+     \textbf{Fabrication}{: FDM 3D printing, soldering, flux-core welding, machining, fiberglass}\\
+     \textbf{Lab Equipment}{: multimeter, oscilloscope, logic analyzer}\\
+     \textbf{Languages}{: Fluent in French and English}
+    }}
+ \end{itemize}
+
+%-----------EXPERIENCE-----------
+
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {p!ng}
+      {Hudson, NH USA}
+      {Mechanical Engineering Intern}
+      {Jun -- Aug 2026}
+      \resumeItemListStart
+        \resumeItem{Developed test scripts and electrical test setups using STM32, Arduino, and Raspberry Pi platforms to accelerate prototyping}
+        \resumeItem{Redesigned and validated a critical lid-application system, achieving $>$99\% cycle success rate}
+        \resumeItem{Integrated magnetic encoders, optical limit switches, and ToF sensors for state detection, position feedback, and homing}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {untill}
+      {Hudson, MA USA}
+      {Computer Vision Engineering Intern}
+      {Apr -- Jun 2026}
+      \resumeItemListStart
+        \resumeItem{Developed a computer-vision system for a vertical farm to detect plant disease, nutrient deficiencies, and other crop abnormalities}
+        \resumeItem{Redesigned the camera array, reducing hardware cost by 62\% while using software-based correction to preserve image quality}
+        \resumeItem{Integrated the system with existing software architecture, implementing remote commands, production-state tracking, and data-collection pipelines for ML development}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Burke Property Services}
+      {Winchester, MA USA}
+      {Carpenter}
+      {Jun -- Aug 2024, Jun -- Aug 2025}
+      \resumeItemListStart
+        \resumeItem{Performed precision cabinet installation, framing, and finish work requiring tight tolerances and clean execution}
+        \resumeItem{Completed carpentry and fire-protection installations in accordance with OSHA requirements, building codes, and project specifications, including fire-rated work that passed fire-department inspection}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+  
+  %-----------PROJECTS-----------
+
+\section{Selected Projects}
+  \resumeSubHeadingListStart
+
+      % ---------- FREESTANDING SAUNA ----------
+    \begin{comment}
+        
+        \resumeProjectHeading
+          {\textbf{Freestanding Sauna} $|$ \emph{Personal Construction Project}}{Jun 2023 -- Dec 2025}
+          \resumeItemListStart
+            \resumeItem{Designed and built a freestanding 7'$\times$14' electrically heated cedar sauna from initial concept through finished construction}
+            \resumeItem{Completed structural framing, weatherproofing, cedar interior finishing, and a two-stage bench system}
+          \resumeItemListEnd
+    \end{comment}
+
+    \resumeProjectHeading
+      {\textbf{Autonomous LiDAR Car} $|$ \emph{Personal Project}}{Feb 2025 -- Jan 2026}
+      \resumeItemListStart
+        \resumeItem{Built an autonomous RC vehicle using VLP-16 LiDAR, Raspberry Pi 5, ROS 2, and C++ to detect obstacles and steer in real time}
+        \resumeItem{Implemented a custom Follow-the-Gap algorithm and dynamically filtered LiDAR point-cloud data to maintain real-time performance on a Raspberry Pi 5}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{12 lb Combat Robot} $|$ \emph{National Havoc Robot League}}{Sep -- Nov 2025}
+      \resumeItemListStart
+        \resumeItem{Led a four-student team in the design, fabrication, and testing of a 12 lb cam-driven flipper robot, balancing weapon effectiveness against weight constraints}
+        \resumeItem{Competed in the National Havoc Robot League, placing 9th of 40 robots in the weight class}
+      \resumeItemListEnd
+
+
+    % ---------- TRACTOR GO-KART ----------
+    \begin{comment}
+        
+        \resumeProjectHeading
+          {\textbf{Tractor Go-Kart} $|$ \emph{Personal Project}}{Jun 2024 -- Aug 2025}
+          \resumeItemListStart
+            \resumeItem{Converted an abandoned ride-on tractor into a 26 hp, 6-speed manual go-kart using a belt-driven powertrain}
+            \resumeItem{Fabricated a gas pedal, clutch, shifting linkage, engine mount, and transaxle pulley, increasing top speed from 8 to 34 mph}
+          \resumeItemListEnd
+        \end{comment}
+
+    
+
+    
+    % ---------- REACTION-WHEEL ROBOT ----------
+    \resumeProjectHeading
+      {\textbf{Reaction-Wheel Robot} $|$ \emph{Personal Project}}{Jan 2026}
+      \resumeItemListStart
+        \resumeItem{Built a reaction-wheel robot from scrap electronics using Arduino C++ and tuned PWM spin-up and spin-down control, earning runner-up in an Instructables contest}
+      \resumeItemListEnd
+      
+    % ---------- SKOV DESIGN ----------
+    \begin{comment}
+        \resumeProjectHeading
+          {\textbf{Skov Design} $|$ \emph{Woodworking Business}}{Sep 2021 -- Jun 2023}
+          \resumeItemListStart
+            \resumeItem{Founded a woodworking business designing and producing custom products sold through Etsy and local markets}
+            \resumeItem{Hired peers to support sales, generated over \$10,000 in revenue over two years, and donated all profits to the National Forest Foundation}
+          \resumeItemListEnd
+    \end{comment}
+
+  \resumeSubHeadingListEnd
+
+
+
+%-----------VOLUNTEERING-----------
+\section{Volunteering}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Local Soup Kitchens}
+      {Woburn, MA}
+      {Volunteer}
+      {}
+      \resumeItemListStart
+        \resumeItem{Supported meal preparation, service, and cleanup for community members at local soup kitchens}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Peer Tutoring}
+      {Winchester, MA}
+      {Chemistry Tutor}
+      {}
+      \resumeItemListStart
+        \resumeItem{Tutored high-school chemistry students in exam preparation and problem-solving, improving assessment scores by over 20\% in some cases}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+
+%-------------------------------------------
+
+\end{document}
